@@ -1,9 +1,8 @@
 # PV-BESS Tool [PVBT] (Analysis and Sizing tool for the small-scale PV/BESS)
 
-![Picture1](https://user-images.githubusercontent.com/69669859/97017890-5ef5e780-1546-11eb-9ec9-2bbfa502331a.jpg)
+![PVBT](https://user-images.githubusercontent.com/69669859/104011567-3a54f780-51a6-11eb-9295-5aebd8e59f5e.png)
 
-The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the sizing optimization and analysis. 
-The PVBT tool utilizes a real-time BESS control method that has been validated using real measurements in addition to integrating a rigorous ageing model to determine the loss in savings due to the capacity degradation. The PVBT outputs are:
+The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the PV/BESS sizing optimization and analysis. The PVBT tool utilizes a real-time BESS control method that has been validated using real measurements in addition to integrating a rigorous ageing model to determine the loss in savings due to the capacity degradation. The PVBT outputs are:
 1.	The net household demand. 
 2.	Electricity bill with and without the BESS.
 3.	BESS power dispatch.
@@ -26,7 +25,7 @@ The aim of the optimization formulation (PVBTOptimization) is to find the optima
 
 Please check the PVBTGuide.pdf file for more details and guidance on how to use the code. 
 
-This tool was validated and detailed in a submitted paper titled ‘Domestic Battery Power Management Strategies to Maximize the Profitability and Support the Network’, authored by Ahmed A.Raouf Mohamed, Robert J. Best, Xueqin Liu, and  D. John Morrow. School of Electronics, Electrical Engineering and Computer Science, Queen’s University Belfast. 
+This tool was validated and detailed in a submitted paper titled ‘A Comperhensive Robust Techno-Economic Analysis and Sizing Tool for the Small-Scale PV and BESS’, authored by Ahmed A.Raouf Mohamed, Robert J. Best, Xueqin Liu, and  D. John Morrow. School of Electronics, Electrical Engineering and Computer Science, Queen’s University Belfast.  
 More details on this paper will be announced soon. 
 
 
@@ -36,7 +35,5 @@ For any inquiry: amohamed06@qub.ac.uk / Ra2ooof@gmail.com
 [![twitter2](https://user-images.githubusercontent.com/69669859/97111234-a068cd00-16d5-11eb-9559-ff4b8946c0d8.png)](https://twitter.com/RA2OOOF)
 
 v1.0 First release (01/2021).
-
-v1.1 Added a selectable starting point of the BESS SOC (11/2020).
 
 Copyright @ 2021 
