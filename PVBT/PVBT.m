@@ -5,7 +5,8 @@
 % This code was developed by Ahmed A.Raouf Mohamed: ------ %
 % ------ Ra2ooof@gmail.com / amohamed06@qub.ac.uk -------- %
 % https://pure.qub.ac.uk/en/persons/ahmed-mohamed -------- %
-% Copyright @2020 ---------------------------------------- %
+% Copyright @2021 ---------------------------------------- %
+% --- https://github.com/ARa2of/PV-BESS-Analysis-Tool  --- %
 % ======================================================== % 
 % Details will be available in the following publication-- %
 % A. A. R. Mohamed, R. J. Best, X. Liu, and D. J. Morrow,  %
