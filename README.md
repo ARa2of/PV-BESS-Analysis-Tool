@@ -15,7 +15,7 @@ The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first
 
 In addition to five cost benefit analysis (CBA) are conducted for:
 
-1.	CBA for the PV investment according to the lifetime warranty.
+1.	CBA for the PV investment according to the warrantied lifetime.
 2.	CBA for the BESS investment according to the warrantied lifetime.
 3.	CBA for the BESS investment according to the lifetime based on the minimum state of health (end of lifetime based on SoH).
 4.	CBA for the PV and the BESS according to the warrantied lifetime of the PV and the BESS.
@@ -31,7 +31,7 @@ More details on this paper will be announced soon.
 
 This code has been developed by [Ahmed A.Raouf Mohamed](https://pure.qub.ac.uk/en/persons/ahmed-mohamed) - EPIC Research Cluster, School of Electronics, Electrical Engineering and Computer Science at Queen's University in Belfast, UK. This work is part of [SPIRE 2 Project](https://www.ulster.ac.uk/spire2/the-project). 
 
-For any inquiry: amohamed06@qub.ac.uk / Ra2ooof@gmail.com 
+For any inquiry: amohamed06@qub.ac.uk / AARaoufM@gmail.com 
 [![twitter2](https://user-images.githubusercontent.com/69669859/97111234-a068cd00-16d5-11eb-9559-ff4b8946c0d8.png)](https://twitter.com/RA2OOOF)
 
 v1.0 First release (01/2021).
