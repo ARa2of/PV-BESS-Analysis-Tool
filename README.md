@@ -25,7 +25,7 @@ The aim of the optimization formulation (PVBTOptimization) is to find the optima
 
 Please check the PVBTGuide.pdf file for more details and guidance on how to use the code. 
 
-This tool was validated and detailed in a submitted paper titled ‘A Comperhensive Robust Techno-Economic Analysis and Sizing Tool for the Small-Scale PV and BESS’, authored by Ahmed A.Raouf Mohamed, Robert J. Best, Xueqin Liu, and  D. John Morrow. School of Electronics, Electrical Engineering and Computer Science, Queen’s University Belfast.  
+This tool was validated and detailed in a submitted paper titled ‘A Comprehensive Robust Techno-Economic Analysis and Sizing Tool for the Small-Scale PV and BESS’, authored by Ahmed A.Raouf Mohamed, Robert J. Best, Xueqin Liu, and  D. John Morrow. School of Electronics, Electrical Engineering and Computer Science, Queen’s University Belfast.  
 More details on this paper will be announced soon. 
 
 
