@@ -3,7 +3,7 @@
 ![PVBT](https://user-images.githubusercontent.com/69669859/104011567-3a54f780-51a6-11eb-9295-5aebd8e59f5e.png)
 
 The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the PV/BESS sizing optimization and analysis. The PVBT tool utilizes a real-time BESS control method that has been validated using real measurements in addition to integrating a rigorous ageing model to determine the loss in savings due to the capacity degradation. The PVBT outputs are:
-1.	The net household demand. 
+1.	The net household demand with and without the BESS. 
 2.	Electricity bill with and without the BESS.
 3.	BESS power dispatch.
 4.	BESS state of charge.
