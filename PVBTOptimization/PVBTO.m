@@ -1,6 +1,6 @@
 % ======================================================== % 
 % ---- PV-Battery Tool (PVBT) Sizing Optimization  ------- %
-% Version: 1  (1/2021) ----------------------------------- %
+% Version: 1.1  (1/2021) --------------------------------- %
 % ======================================================== % 
 % This code was developed by Ahmed A.Raouf Mohamed: ------ %
 % ------ Ra2ooof@gmail.com / amohamed06@qub.ac.uk -------- %
@@ -25,9 +25,9 @@
 clc; close all; clear;
 tic;
 format long g
-global Tariff kPF DataRes IRR OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC SaveR BPP ERRa
+global Tariff kPF DataRes IRR OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC SaveR BPP ERRa FB
 %% 
-Tariff="FT"; % DT for dual tariff (Economy 7 in this code), FT for flat tariff, TT for triple tariff (TIDE tariff in this code)
+Tariff="DT"; % DT for dual tariff (Economy 7 in this code), FT for flat tariff, TT for triple tariff (TIDE tariff in this code)
 DataRes=30; %Data resolution 10 for 10 minutes reso, 30 for 30 minutes reso, 60 for 60 minutes(1 hour) reso and so on...
 OPTTY="BPV"; %Determine the optimization type : BPV: find the BESS and PV sizes together, B: Optimize the BESS size only, PV: Optimize the PV size only. 
 
@@ -62,8 +62,8 @@ DOD=0.95; %MAX DOD
 SOCMAX=1; %Max SoC
 LTY=10; % lifetime in years
 SOHM=0.6; % Minimum State of Health 
-BP=499; % BESS Price  £/kWh
-%%%%%%%%%%%%%
+FB=70.875; %Fixed price of the BESS price that doesn't decline 
+BP=436.59; % BESS Price  £/kWh%%%%%%%%%%%%%
 RE=0.95*0.95; %= 0.95(BESS) * 0.95(Inverter)
 SOCMIN=SOCMAX-DOD; %Min SoC 
 SOCI=SOCMIN; %Initial SOC that the simulations will start with. 
@@ -72,7 +72,7 @@ PVCost=1400; %Cost in £/kW
 InvCost=100; %inverter Cost in £/kW
 InvSize=3.68; %inverter Size in kW
 Lifinv=15; %Lifetime of inverter in years
-Lifpv=25; %Lifetime of PV  in years
+Lifpv=30; %Lifetime of PV  in years
 PVdeg=0.5/100; %PV annual degradation rate
 PVOM=1/100; %PV annual O&M cost as a percentage of the capital cost 
 %% Utility Inputs - Tariffs are in pence/kWh or cent/kWh
@@ -111,14 +111,14 @@ end
 PRP = repelem(TPR,tau);
 %% Cost Benefit Analysis 
 YearI=2021; %Year of installation
-IR=3/100; %Interest Rate
+IR=3.5/100; %Interest Rate
 er=2/100; %electricity annual growth rate
 Dr=12/100;% Annual declining rate in BESS prices
 %% BESS Control Strategy Inputs: Threshold Rule-based 
 %% BESS Control Method Inputs: Threshold Rule-based 
 PTHD=0; % Specify the Upper threshold for BESS Discharge
 PTHC=0; % Specify the Lower threshold for BESS Charge  
-PCNS=[0.821, 0.237, 0, 0.534]*FCN; %A percentage of the BESS capacity to be charged during each season ((Winter, Spring, Summer, Autumn)
+PCNS=[0.7, 0.23, 0, 0.45]*FCN; %A percentage of the BESS capacity to be charged during each season ((Winter, Spring, Summer, Autumn)
 %using low tariff rate to maximize the energy arbitrage. Set all values to zero if you don’t want to use this feature 
 
 MAINCODE0
