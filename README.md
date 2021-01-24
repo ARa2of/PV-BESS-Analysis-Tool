@@ -37,6 +37,7 @@ For any inquiry: amohamed06@qub.ac.uk / AARaoufM@gmail.com
 [![twitter2](https://user-images.githubusercontent.com/69669859/97111234-a068cd00-16d5-11eb-9559-ff4b8946c0d8.png)](https://twitter.com/RA2OOOF)
 
 v1.0 First release (01/2021).
+
 v1.1 Added "FB" that represents fixed component of the BESS prices which is not affected by the annual declining rate in BESS prices (01/2021).
 
 Copyright @ 2021 
