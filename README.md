@@ -2,7 +2,9 @@
 
 ![PVBT](https://user-images.githubusercontent.com/69669859/104011567-3a54f780-51a6-11eb-9295-5aebd8e59f5e.png)
 
-The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the PV/BESS sizing optimization and analysis. The PVBT tool utilizes a real-time BESS control method that has been validated using real measurements in addition to integrating a rigorous ageing model to determine the loss in savings due to the capacity degradation. The PVBT outputs are:
+The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the PV/BESS sizing optimization and analysis.
+
+The PVBT tool utilizes a real-time BESS control method that aim to maximize the PV self-consumption and energy arbitrage that has been validated using real measurements in addition to integrating a rigorous ageing model to determine the loss in savings due to the capacity degradation. The PVBT outputs are:
 1.	The net household demand with and without the BESS. 
 2.	Electricity bill with and without the BESS.
 3.	BESS power dispatch.
@@ -35,5 +37,6 @@ For any inquiry: amohamed06@qub.ac.uk / AARaoufM@gmail.com
 [![twitter2](https://user-images.githubusercontent.com/69669859/97111234-a068cd00-16d5-11eb-9559-ff4b8946c0d8.png)](https://twitter.com/RA2OOOF)
 
 v1.0 First release (01/2021).
+v1.1 Added "FB" that represents fixed component of the BESS prices which is not affected by the annual declining rate in BESS prices (01/2021).
 
 Copyright @ 2021 
