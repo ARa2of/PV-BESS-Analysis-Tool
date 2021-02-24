@@ -54,7 +54,6 @@ SOCMIN=SOCMAX-DOD; %Min SoC
 SOCI=SOCMIN; %Initial SOC that the simulations will start with. 
 %% PV Inputs
 PVSize=3.3; %Size in kWp
-PV=PV.*PVSize;
 PVCost=1400; %Cost in £/kW
 Lifpv=30; %Lifetime of PV  in years
 InvCost=100; %inverter Cost in £/kW
