@@ -39,5 +39,5 @@ For any inquiry: amohamed06@qub.ac.uk / AARaoufM@gmail.com
 v1.0 First release (01/2021).
 
 v1.1 Added "FB" that represents fixed component of the BESS prices which is not affected by the annual declining rate in BESS prices (01/2021).
-
+v1.2 An option to discharge the battery starting from the end of low tariff period (02/2021).
 Copyright @ 2021 
