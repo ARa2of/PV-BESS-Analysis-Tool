@@ -1,6 +1,7 @@
 # PV-BESS Tool [PVBT] (Analysis and Sizing tool for the small-scale PV/BESS)
 
 ![PVBT](https://user-images.githubusercontent.com/69669859/104011567-3a54f780-51a6-11eb-9295-5aebd8e59f5e.png)
+
 [![DOI](https://zenodo.org/badge/327884914.svg)](https://zenodo.org/badge/latestdoi/327884914)
 
 The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the PV/BESS sizing optimization and analysis.
