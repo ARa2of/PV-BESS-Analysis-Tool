@@ -1,20 +1,22 @@
 % ======================================================== % 
 % --------------   PV-Battery Tool (PVBT)   -------------- %
-% Version: 1.1  (1/2021) --------------------------------- %
+% Version: 1.2  (2/2021) --------------------------------- %
 % ======================================================== % 
 % This code was developed by Ahmed A.Raouf Mohamed: ------ %
-% ------ Ra2ooof@gmail.com / amohamed06@qub.ac.uk -------- %
+% ------ AARaoufM@gmail.com / amohamed06@qub.ac.uk ------- %
 % https://pure.qub.ac.uk/en/persons/ahmed-mohamed -------- %
 % Copyright @2021 ---------------------------------------- %
 % --- https://github.com/ARa2of/PV-BESS-Analysis-Tool  --- %
 % ======================================================== % 
-% Details will be available in the following publication-- %
+% ---Details are  available in the following publication-- %
 % A. A. R. Mohamed, R. J. Best, X. Liu, and D. J. Morrow,  %
 %‘A Comprehensive Robust Techno-Economic Analysis and      %
-% Sizing Tool for the Small-Scale PV and BESS’------------ %
-% EPIC Research Cluster ------- Queen's University Belfast %
+% Sizing Tool for the Small-Scale PV and BESS’ in IEEE --- %
+%-------Transactions on Energy Conversion, 2021.-----------%
+%----- doi: https://doi.org/10.1109/TEC.2021.3107103 ------%
 % ======================================================== % 
 % ---  This work is part of INTERREG VA SPIRE2 Project --- %
+% EPIC Research Cluster ------- Queen's University Belfast %
 % ======================================================== % 
 % Please check PVBTGuide.pdf for details on how to run the %
 % code. -------------------------------------------------- %
