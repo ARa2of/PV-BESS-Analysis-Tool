@@ -4,6 +4,8 @@
 
 [![DOI](https://zenodo.org/badge/327884914.svg)](https://zenodo.org/badge/latestdoi/327884914)
 
+[![View PV-BESS Analysis and Sizing Tool (PVBT) on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://uk.mathworks.com/matlabcentral/fileexchange/98279-pv-bess-analysis-and-sizing-tool-pvbt)
+
 The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the PV/BESS sizing optimization and analysis.
 
 The PVBT tool utilizes a real-time BESS control method that aim to maximize the PV self-consumption and energy arbitrage that has been validated using real measurements in addition to integrating a rigorous ageing model to determine the loss in savings due to the capacity degradation. The PVBT outputs are:
