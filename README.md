@@ -6,6 +6,12 @@
 
 [![View PV-BESS Analysis and Sizing Tool (PVBT) on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://uk.mathworks.com/matlabcentral/fileexchange/98279-pv-bess-analysis-and-sizing-tool-pvbt)
 
+This tool was validated and detailed in the following paper: 
+
+A. A. R. Mohamed, R. J. Best, X. A. Liu and D. J. Morrow, "A Comprehensive Robust Techno-Economic Analysis and Sizing Tool for the Small-Scale PV and BESS," in IEEE Transactions on Energy Conversion, 2021, doi: 10.1109/TEC.2021.3107103.
+
+The full paper link: https://ieeexplore.ieee.org/document/9521731  ||  Open Access version from: https://bit.ly/3hspvsu
+
 The repository contains two programs: 1) PVBT and 2) PVBTOptimization. The first one is for the analysis only, the second one is for the PV/BESS sizing optimization and analysis.
 
 The PVBT tool utilizes a real-time BESS control method that aim to maximize the PV self-consumption and energy arbitrage that has been validated using real measurements in addition to integrating a rigorous ageing model to determine the loss in savings due to the capacity degradation. The PVBT outputs are:
@@ -30,12 +36,6 @@ In addition to five cost benefit analysis (CBA) are conducted for:
 The aim of the optimization formulation (PVBTOptimization) is to find the optimal sizes of PV only with or without BESS, BESS only in presence of PV, and PV with BESS sequentially. The optimization objective is to maximize the profitability through maximizing the net present value. 
 
 Please check the PVBTGuide.pdf file for more details and guidance on how to use the code. 
-
-This tool was validated and detailed in the following paper: 
-
-A. A. R. Mohamed, R. J. Best, X. A. Liu and D. J. Morrow, "A Comprehensive Robust Techno-Economic Analysis and Sizing Tool for the Small-Scale PV and BESS," in IEEE Transactions on Energy Conversion, 2021, doi: 10.1109/TEC.2021.3107103. (https://ieeexplore.ieee.org/document/9521731)
-
-
 
 This code has been developed by [Ahmed A.Raouf Mohamed](https://pure.qub.ac.uk/en/persons/ahmed-mohamed) - EPIC Research Cluster, School of Electronics, Electrical Engineering and Computer Science at Queen's University in Belfast, UK. This work is part of [SPIRE 2 Project](https://www.ulster.ac.uk/spire2/the-project). 
 
