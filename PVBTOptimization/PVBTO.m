@@ -121,6 +121,7 @@ Dr=12/100;% Annual declining rate in BESS prices
 PTHD=0; % Specify the Upper threshold for BESS Discharge
 PTHC=0; % Specify the Lower threshold for BESS Charge  
 PCNS=[0.7, 0.23, 0, 0.45]*FCN; %A percentage of the BESS capacity to be charged during each season ((Winter, Spring, Summer, Autumn)
+DIA=1; %= 1: if you want the algorithm to start discharging after the end of low tariff period, =0: to discharge whenever the demand exceeds the generation at any time of the day
 %using low tariff rate to maximize the energy arbitrage. Set all values to zero if you don’t want to use this feature 
 
 MAINCODE0
