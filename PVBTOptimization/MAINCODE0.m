@@ -79,9 +79,19 @@ b = [];
 Aeq = [];
 beq = [];
 nvars=length(lb);
-opts = optiset('solver','NOMAD','display','iter');
-Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
-[x,objec] = solve(Opt,x0);
+
+if Select_Optimizer=="NOMAD"
+	opts = optiset('solver','NOMAD','display','iter');
+	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
+	[x,objec] = solve(Opt,x0);
+end	
+if Select_Optimizer=="Fmincon"
+	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
+if Select_Optimizer=="PatternSearch"
+    x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
+	
 PVSize=round(x(1),1); %Size in kW
     OPTTY="B";
 fun=@MAINCODE;
@@ -97,9 +107,18 @@ for i=1:NuB
 kPF=GF(i);
 BP=BPP(i);
 LTY=single(LYY(i));
-opts = optiset('solver','NOMAD','display','iter');
-Opt = opti('fun',fun,'bounds',lb2,ub2,'options',opts,'ndec',nvars,'x0',x0);
-[x,objec] = solve(Opt,x0);
+if Select_Optimizer=="NOMAD"
+	opts = optiset('solver','NOMAD','display','iter');
+	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
+	[x,objec] = solve(Opt,x0);
+end	
+if Select_Optimizer=="Fmincon"
+	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
+if Select_Optimizer=="PatternSearch"
+    x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
+
 BG(i)=x;
 end
 BES=round((BG),2); %Actual BESS Capacity [kWh]
@@ -121,9 +140,18 @@ for i=1:NuB
 kPF=GF(i);
 BP=BPP(i);
 LTY=LYY(i);
-opts = optiset('solver','NOMAD','display','iter');
-Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
-[x,objec] = solve(Opt,x0);
+if Select_Optimizer=="NOMAD"
+	opts = optiset('solver','NOMAD','display','iter');
+	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
+	[x,objec] = solve(Opt,x0);
+end	
+if Select_Optimizer=="Fmincon"
+	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
+if Select_Optimizer=="PatternSearch"
+    x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
+
 BG(i)=x;
 end
 BES=round((BG),2); %Actual BESS Capacity [kWh]
@@ -131,6 +159,7 @@ BESP=round(1.245+0.304*(BG),2); %BESS Power rating [kW]
 end
 
 if OPTTY=="PV"
+
 fun=@MAINCODE;
 lb = [LPV];
 ub = [UPV];
@@ -141,10 +170,17 @@ b = [];
 Aeq = [];
 beq = [];
 nvars=length(lb);
-opts = optiset('solver','NOMAD','display','iter');
-Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
-[x,objec] = solve(Opt,x0);
-PVSize=round(x(1),1); %Size in kW
+if Select_Optimizer=="NOMAD"
+	opts = optiset('solver','NOMAD','display','iter');
+	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
+	[x,objec] = solve(Opt,x0);
+end	
+if Select_Optimizer=="Fmincon"
+	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
+if Select_Optimizer=="PatternSearch"
+    x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
+end	
 end
 %%
 

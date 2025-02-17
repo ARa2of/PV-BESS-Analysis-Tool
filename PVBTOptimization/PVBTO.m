@@ -27,11 +27,12 @@
 clc; close all; clear;
 tic;
 format long g
-global Tariff kPF DataRes IRR OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC SaveR BPP ERRa FB DIAA
+global Select_Optimizer Tariff kPF DataRes IRR OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC SaveR BPP ERRa FB DIAA
 %% 
 Tariff="DT"; % DT for dual tariff (Economy 7 in this code), FT for flat tariff, TT for triple tariff (TIDE tariff in this code)
 DataRes=30; %Data resolution 10 for 10 minutes reso, 30 for 30 minutes reso, 60 for 60 minutes(1 hour) reso and so on...
 OPTTY="BPV"; %Determine the optimization type : BPV: find the BESS and PV sizes together, B: Optimize the BESS size only, PV: Optimize the PV size only. 
+Select_Optimizer="PatternSearch"; % Select from the following options 1) NOMAD, 2) Fmincon 3)PatternSearch
 
 if OPTTY=="PV"
 BESS=1E-10; %Actual BESS Capacity [kWh] : If you want to size the PV in presence of a BESS, add the BESS specs. If not, leave it as small value (not zero). 
@@ -62,15 +63,15 @@ tau=TD/(24); % {Time interval=1/tau}
 %% BESS Inputs
 DOD=0.95; %MAX DOD
 SOCMAX=1; %Max SoC
-LTY=10; % lifetime in years
+LTY=13; % lifetime in years
 SOHM=0.6; % Minimum State of Health 
-FB=70.875; %Fixed price of the BESS price that doesn't decline 
-BP=436.59; % BESS Price  £/kWh%%%%%%%%%%%%%
+FB=72; %Fixed price of the BESS price that doesn't decline 
+BP=500-72; % BESS Price  £/kWh%%%%%%%%%%%%%
 RE=0.95*0.95; %= 0.95(BESS) * 0.95(Inverter)
 SOCMIN=SOCMAX-DOD; %Min SoC 
 SOCI=SOCMIN; %Initial SOC that the simulations will start with. 
 %% PV Inputs
-PVCost=1400; %Cost in £/kW
+PVCost=1742; %Cost in £/kW
 InvCost=100; %inverter Cost in £/kW
 InvSize=3.68; %inverter Size in kW
 Lifinv=15; %Lifetime of inverter in years
@@ -83,9 +84,9 @@ EXP=3.68; %Export Power Limit =3.68kW
 EX=5; % Export Tariff = 4.59p/kWh 
 if Tariff=="DT"
 %Economy 7 Dual tariff.
-SC=22; % standing charge £/day
-HR=17.4; %Day Rate 8am-1am 
-LR=7.91; % Night Rate 1am-8am 
+SC=13.66; % standing charge £/day
+HR=35.89; %Day Rate 8am-1am 
+LR=17.16; % Night Rate 1am-8am 
 TLS=1;  %Night rate start time
 TLE=7; %Night Rate end time
 TPR=[LR LR LR LR LR LR LR HR HR HR HR HR HR HR HR HR HR HR HR HR HR HR HR HR];%Tariff Profile - Economy 7
@@ -93,8 +94,8 @@ FCN=1;
 end
 if Tariff=="FT"
 % Flat Tariff Data 
-SC=22; % standing charge £/day
-SR = 16.6; % Taken from PowerNI Website - 16.77p/kWh via Online Billing, Monthly Direct Debit incl VAT
+SC=13.66; % standing charge £/day
+SR = 31; % Taken from PowerNI Website - 16.77p/kWh via Online Billing, Monthly Direct Debit incl VAT
 TPR=[SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR SR];%Tariff Profile - Flat Tariff
 FCN=0;
 end
@@ -112,8 +113,8 @@ FCN=1;
 end
 PRP = repelem(TPR,tau);
 %% Cost Benefit Analysis 
-YearI=2021; %Year of installation
-IR=3.5/100; %Interest Rate
+YearI=2025; %Year of installation
+IR=4.5/100; %Interest Rate
 er=2/100; %electricity annual growth rate
 Dr=12/100;% Annual declining rate in BESS prices
 %% BESS Control Strategy Inputs: Threshold Rule-based 
@@ -121,7 +122,7 @@ Dr=12/100;% Annual declining rate in BESS prices
 PTHD=0; % Specify the Upper threshold for BESS Discharge
 PTHC=0; % Specify the Lower threshold for BESS Charge  
 PCNS=[0.7, 0.23, 0, 0.45]*FCN; %A percentage of the BESS capacity to be charged during each season ((Winter, Spring, Summer, Autumn)
-DIA=1; %= 1: if you want the algorithm to start discharging after the end of low tariff period, =0: to discharge whenever the demand exceeds the generation at any time of the day
+DIA=0; %= 1: if you want the algorithm to start discharging after the end of low tariff period, =0: to discharge whenever the demand exceeds the generation at any time of the day
 %using low tariff rate to maximize the energy arbitrage. Set all values to zero if you don’t want to use this feature 
 
 MAINCODE0
