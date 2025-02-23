@@ -54,6 +54,9 @@ for i=1:T
    if i==TD*k
       gf=TD*k;
       k=k+1;
+        if k > length(PCN)
+            k = length(PCN); % Ensure k stays within valid bounds
+        end
    end 
 
 g=g+1;

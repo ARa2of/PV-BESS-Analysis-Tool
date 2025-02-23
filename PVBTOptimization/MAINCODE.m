@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function objec=MAINCODE(x)
-global ERRa kPF IRR Tariff DataRes OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC FB DIAA
+global ERRa kPF IRR Tariff DataRes OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC FB DIAA Profile
 %% Load Profiles
-Profile=readmatrix('Inputs.csv');
+%Profile=readmatrix('Inputs.csv');
 D=Profile(:,1); %Demand
 PV=Profile(:,2);
 EV=Profile(:,3);
@@ -83,6 +83,9 @@ for i=1:T
    if i==TD*k
       gf=TD*k;
       k=k+1;
+        if k > length(PCN)
+            k = length(PCN); % Ensure k stays within valid bounds
+        end
    end 
 
 g=g+1;

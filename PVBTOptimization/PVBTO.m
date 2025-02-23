@@ -27,10 +27,10 @@
 clc; close all; clear;
 tic;
 format long g
-global Select_Optimizer Tariff kPF DataRes IRR OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC SaveR BPP ERRa FB DIAA
+global Select_Optimizer Tariff kPF DataRes IRR OPTTY PVSize BESS BESSP DOD SOCMAX SOCMIN SOCI RE PVCost InvCost InvSize Lifinv Lifpv PVdeg PVOM PRP EXP EX YearI IR er Dr PCN TLS TLE PTHC PTHD LTY SOHM BP SC SaveR BPP ERRa FB DIAA Profile
 %% 
 Tariff="DT"; % DT for dual tariff (Economy 7 in this code), FT for flat tariff, TT for triple tariff (TIDE tariff in this code)
-DataRes=30; %Data resolution 10 for 10 minutes reso, 30 for 30 minutes reso, 60 for 60 minutes(1 hour) reso and so on...
+DataRes=60; %Data resolution 10 for 10 minutes reso, 30 for 30 minutes reso, 60 for 60 minutes(1 hour) reso and so on...
 OPTTY="BPV"; %Determine the optimization type : BPV: find the BESS and PV sizes together, B: Optimize the BESS size only, PV: Optimize the PV size only. 
 Select_Optimizer="PatternSearch"; % Select from the following options 1) NOMAD, 2) Fmincon 3)PatternSearch
 
@@ -49,10 +49,10 @@ if OPTTY=="BPV"
 LPV=1;   %PV Lower limit of the search space 
 UPV=6;   %PV Upper limit of the search space 
 LBS=2.4; %BESS Lower limit of the search space 
-UBS=14;  %BESS Upper limit of the search space 
+UBS=20;  %BESS Upper limit of the search space 
 end
 %% Load Profiles
-Profile=readmatrix('Inputs.csv');
+Profile=readmatrix('InputsHourly.csv');
 D=Profile(:,1); %Demand
 PV=Profile(:,2);
 EV=Profile(:,3);
@@ -63,10 +63,11 @@ tau=TD/(24); % {Time interval=1/tau}
 %% BESS Inputs
 DOD=0.95; %MAX DOD
 SOCMAX=1; %Max SoC
-LTY=13; % lifetime in years
+LTY=10; % lifetime in years
 SOHM=0.6; % Minimum State of Health 
-FB=72; %Fixed price of the BESS price that doesn't decline 
-BP=500-72; % BESS Price  £/kWh%%%%%%%%%%%%%
+costbess=500;
+FB=costbess*15/100; %Fixed price of the BESS price that doesn't decline 
+BP=costbess-FB; % BESS Price  £/kWh%%%%%%%%%%%%%
 RE=0.95*0.95; %= 0.95(BESS) * 0.95(Inverter)
 SOCMIN=SOCMAX-DOD; %Min SoC 
 SOCI=SOCMIN; %Initial SOC that the simulations will start with. 
@@ -79,9 +80,9 @@ Lifpv=30; %Lifetime of PV  in years
 PVdeg=0.5/100; %PV annual degradation rate
 PVOM=1/100; %PV annual O&M cost as a percentage of the capital cost 
 %% Utility Inputs - Tariffs are in pence/kWh or cent/kWh
-EXP=3.68; %Export Power Limit =3.68kW
+EXP=7.36; %Export Power Limit =3.68kW
 % Export Tariff e.g. PowerNI Microgen Tariff (https://powerni.co.uk/products--services/renewableenergy/sell-electricity/)
-EX=5; % Export Tariff = 4.59p/kWh 
+EX=4.59; % Export Tariff = 4.59p/kWh 
 if Tariff=="DT"
 %Economy 7 Dual tariff.
 SC=13.66; % standing charge £/day
