@@ -42,11 +42,11 @@ This code has been developed by [Ahmed A.Raouf Mohamed](https://pure.qub.ac.uk/e
 For any inquiry: amohamed06@qub.ac.uk / AARaoufM@gmail.com 
 [![twitter2](https://user-images.githubusercontent.com/69669859/97111234-a068cd00-16d5-11eb-9559-ff4b8946c0d8.png)](https://twitter.com/RA2OOOF)
 
-v1.0 First release (01/2021).
-v1.1 Added "FB" that represents fixed component of the BESS prices which is not affected by the annual declining rate in BESS prices (01/2021).
-v1.2 An option to discharge the battery starting from the end of low tariff period (02/2021).
-v1.3 fix bugs and added Pattern Search as one of the optimizers - require Global Optimization Toolbox in Matlab 
-v1.4 fix bugs associated with Data Resolution
+v1.0 First release (01/2021).  
+v1.1 Added "FB" that represents fixed component of the BESS prices which is not affected by the annual declining rate in BESS prices (01/2021).  
+v1.2 An option to discharge the battery starting from the end of low tariff period (02/2021).  
+v1.3 fix bugs and added Pattern Search as one of the optimizers - require Global Optimization Toolbox in Matlab.  
+v1.4 fix bugs associated with Data Resolution.  
 v1.5 added [Grey Wolf Optimizer (GWO)](https://uk.mathworks.com/matlabcentral/fileexchange/44974-grey-wolf-optimizer-gwo?s_tid=srchtitle) as one of the optimizers. Please cite GWO if you will use it in your work as explained here [Grey Wolf Optimizer (GWO)](https://uk.mathworks.com/matlabcentral/fileexchange/44974-grey-wolf-optimizer-gwo?s_tid=srchtitle).  
 
 Copyright @ 2025 
