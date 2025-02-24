@@ -37,7 +37,7 @@ The aim of the optimization formulation (PVBTOptimization) is to find the optima
 
 Please check the PVBTGuide.pdf file for more details and guidance on how to use the code. 
 
-This code has been developed by [Ahmed A.Raouf Mohamed](https://pure.qub.ac.uk/en/persons/ahmed-mohamed) - EPIC Research Cluster, School of Electronics, Electrical Engineering and Computer Science at Queen's University in Belfast, UK. This work is part of [SPIRE 2 Project](https://www.ulster.ac.uk/spire2/the-project). 
+This code has been developed by [Ahmed A.Raouf Mohamed](https://pure.qub.ac.uk/en/persons/ahmed-mohamed) - during time at EPIC Research Cluster, School of Electronics, Electrical Engineering and Computer Science at Queen's University in Belfast, UK. This work is part of [SPIRE 2 Project](https://www.ulster.ac.uk/spire2/the-project). 
 
 For any inquiry: amohamed06@qub.ac.uk / AARaoufM@gmail.com 
 [![twitter2](https://user-images.githubusercontent.com/69669859/97111234-a068cd00-16d5-11eb-9559-ff4b8946c0d8.png)](https://twitter.com/RA2OOOF)
@@ -49,4 +49,4 @@ v1.2 An option to discharge the battery starting from the end of low tariff peri
 Copyright @ 2021 
 v1.3 fix bugs and added Pattern Search as one of the optimizers - require Global Optimization Toolbox in Matlab 
 v1.4 fix bugs associated with Data Resolution
-v1.5 added Grey Wolf Optimizer (GWO) as one of the optimizers
+v1.5 added [Grey Wolf Optimizer (GWO)](https://uk.mathworks.com/matlabcentral/fileexchange/44974-grey-wolf-optimizer-gwo?s_tid=srchtitle) as one of the optimizers
