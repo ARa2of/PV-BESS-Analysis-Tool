@@ -49,4 +49,5 @@ v1.2 An option to discharge the battery starting from the end of low tariff peri
 Copyright @ 2021 
 v1.3 fix bugs and added Pattern Search as one of the optimizers - require Global Optimization Toolbox in Matlab 
 v1.4 fix bugs associated with Data Resolution
+
 v1.5 added [Grey Wolf Optimizer (GWO)](https://uk.mathworks.com/matlabcentral/fileexchange/44974-grey-wolf-optimizer-gwo?s_tid=srchtitle) as one of the optimizers
