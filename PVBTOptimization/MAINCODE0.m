@@ -85,8 +85,9 @@ if Select_Optimizer=="NOMAD"
 	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
 	[x,objec] = solve(Opt,x0);
 end	
-if Select_Optimizer=="Fmincon"
-	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+if Select_Optimizer=="GreyWolfOptimizer"
+    [Best_score,x,GWO_cg_curve]=GWO(10,10,lb,ub,nvars,fun);
+    
 end	
 if Select_Optimizer=="PatternSearch"
     x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
@@ -112,8 +113,8 @@ if Select_Optimizer=="NOMAD"
 	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
 	[x,objec] = solve(Opt,x0);
 end	
-if Select_Optimizer=="Fmincon"
-	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+if Select_Optimizer=="GreyWolfOptimizer"
+    [Best_score,x,GWO_cg_curve]=GWO(10,10,lb,ub,nvars,fun);
 end	
 if Select_Optimizer=="PatternSearch"
     x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
@@ -145,8 +146,8 @@ if Select_Optimizer=="NOMAD"
 	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
 	[x,objec] = solve(Opt,x0);
 end	
-if Select_Optimizer=="Fmincon"
-	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+if Select_Optimizer=="GreyWolfOptimizer"
+    [Best_score,x,GWO_cg_curve]=GWO(10,10,lb,ub,nvars,fun);
 end	
 if Select_Optimizer=="PatternSearch"
     x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
@@ -175,8 +176,8 @@ if Select_Optimizer=="NOMAD"
 	Opt = opti('fun',fun,'bounds',lb,ub,'options',opts,'ndec',nvars,'x0',x0);
 	[x,objec] = solve(Opt,x0);
 end	
-if Select_Optimizer=="Fmincon"
-	x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub);
+if Select_Optimizer=="GreyWolfOptimizer"
+    [Best_score,x,GWO_cg_curve]=GWO(10,10,lb,ub,nvars,fun);
 end	
 if Select_Optimizer=="PatternSearch"
     x = patternsearch(fun,x0,A,b,Aeq,beq,lb,ub);
